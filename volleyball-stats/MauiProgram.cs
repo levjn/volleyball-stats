@@ -1,6 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using volleyball_stats.Data.Entities;
-using volleyball_stats.Data.Services;
 
 namespace volleyball_stats
 {
@@ -17,11 +15,7 @@ namespace volleyball_stats
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.Services.AddTransient<MainPage>();
-            builder.Services.AddSingleton<BaseDbService<MatchDbEntity>>();
-            builder.Services.AddSingleton<BaseDbService<PlayerDbEntity>>();
-            builder.Services.AddSingleton<BaseDbService<TeamDbEntity>>();
-            builder.Services.AddSingleton<BaseDbService<Player_Match_Points>>();
+            builder.Services.AddTransient<Pages.MainPage>();
 
 #if DEBUG
     		builder.Logging.AddDebug();
