@@ -5,6 +5,7 @@
 
         public MainPage()
         {
+            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
         }
 

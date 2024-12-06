@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("volleyball-stats")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+9749b5d5e58408be0dbca35d160eebd7b6ae3615")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+c8573bc724b7404e1c29794a0fbd38dc93daff1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("volleyball-stats")]
 [assembly: System.Reflection.AssemblyTitleAttribute("volleyball-stats")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

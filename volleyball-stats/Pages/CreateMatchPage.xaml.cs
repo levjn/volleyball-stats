@@ -8,6 +8,7 @@ public partial class CreateMatchPage : ContentPage
 {
 	public CreateMatchPage()
 	{
+		NavigationPage.SetHasBackButton(this, false);
 		InitializeComponent();
 		
 	}
@@ -32,7 +33,7 @@ public partial class CreateMatchPage : ContentPage
 		
 		Database.Matches.Add(match);
 		
-		await Navigation.PushAsync(new CreatePlayersPage());
+		await Navigation.PushAsync(new CreatePlayersPage(match.Id));
 	}
 	
 	
