@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="volleyball_stats.Pages.CaptureMatch"
+             Title="Match">
+    <ContentPage.Content>
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Label x:Name="LeftTeam"/>
+                <Label 
+                    Text=" vs "/>
+                <Label x:Name="RightTeam" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Button BackgroundColor="Red" 
+                        Text="-" 
+                        TextColor="White" 
+                        WidthRequest="10" 
+                        HeightRequest="10"/>
+
+                <!-- Space between buttons -->
+                <BoxView HeightRequest="20" />
+
+                <!-- Green Button with Plus -->
+                <Button BackgroundColor="Green" 
+                        Text="+" 
+                        TextColor="White" 
+                        WidthRequest="10" 
+                        HeightRequest="10"/>
+                <Label 
+                    Text="0"
+                    x:Name="LeftScore"/>
+                <Label 
+                    Text=":"/>
+                <Label 
+                    Text="0"
+                    x:Name="RightScore"/>
+                <!-- Green Button with Plus -->
+                <Button BackgroundColor="Green" 
+                        Text="+" 
+                        TextColor="White" 
+                        WidthRequest="10" 
+                        HeightRequest="10"/>
+                
+                <!-- Space between buttons -->
+                <BoxView HeightRequest="20" />
+                
+                <Button BackgroundColor="Red" 
+                        Text="-" 
+                        TextColor="White" 
+                        WidthRequest="10" 
+                        HeightRequest="10"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout> 
+    </ContentPage.Content>
+</ContentPage>

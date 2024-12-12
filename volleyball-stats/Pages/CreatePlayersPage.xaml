@@ -15,9 +15,12 @@
 
                 <!-- Buttons to Add and Remove Entry Fields -->
                 <HorizontalStackLayout Spacing="10">
-                    <Button Text="Feld hinzufügen" Clicked="AddEntryField" />
-                    <Button Text="Feld entfernen" Clicked="RemoveEntryField" />
+                    <Button x:Name="addFieldButton" Text="Feld hinzufügen" Clicked="AddEntryField" />
+                    <Button x:Name="removeFieldButton" Text="Feld entfernen" Clicked="RemoveEntryField" />
                 </HorizontalStackLayout>
+
+                <!-- Finalize Button -->
+                <Button x:Name="finishButton" Text="Fertig" HorizontalOptions="End" VerticalOptions="End" Clicked="OnFertigButtonClicked" />
             </VerticalStackLayout>
         </ScrollView>
     </ContentPage.Content>

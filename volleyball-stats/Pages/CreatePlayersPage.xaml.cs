@@ -1,4 +1,4 @@
-﻿using Match = volleyball_stats.Entities.Match;
+﻿using volleyball_stats.Entities;
 
 namespace volleyball_stats.Pages;
 
@@ -21,7 +21,6 @@ public partial class CreatePlayersPage : ContentPage
 
         setHomeName();
 
-        // Initialize with the initial number of fields
         for (int i = 0; i < InitialFields; i++)
         {
             AddEntryField(null, null);
@@ -33,7 +32,6 @@ public partial class CreatePlayersPage : ContentPage
         homeNameLabel.Text = $"Heimteam: {match.HomeTeam.Name}";
     }
 
-    // Add an entry field to the container
     private void AddEntryField(object sender, EventArgs e)
     {
         if (entryContainer.Children.Count >= MaxFields)
@@ -42,15 +40,31 @@ public partial class CreatePlayersPage : ContentPage
             return;
         }
 
-        var entry = new Entry
+        var playerEntryLayout = new StackLayout
         {
-            Placeholder = $"Spieler {entryContainer.Children.Count + 1}"
+            Orientation = StackOrientation.Horizontal,
+            Spacing = 10
         };
 
-        entryContainer.Children.Add(entry);
+        var numberEntry = new Entry
+        {
+            Placeholder = "Nummer",
+            Keyboard = Keyboard.Numeric,
+            WidthRequest = 60
+        };
+
+        var nameEntry = new Entry
+        {
+            Placeholder = $"Spieler {entryContainer.Children.Count / 2 + 1}",
+            HorizontalOptions = LayoutOptions.FillAndExpand
+        };
+
+        playerEntryLayout.Children.Add(numberEntry);
+        playerEntryLayout.Children.Add(nameEntry);
+
+        entryContainer.Children.Add(playerEntryLayout);
     }
 
-    // Remove the last entry field from the container
     private void RemoveEntryField(object sender, EventArgs e)
     {
         if (entryContainer.Children.Count > 0)
@@ -63,13 +77,41 @@ public partial class CreatePlayersPage : ContentPage
         }
     }
 
-    // Get the text from all entry fields
-    public List<string> GetPlayerNames()
+    public List<(int number, string? name)> GetPlayerDetails()
     {
         return entryContainer.Children
-                             .OfType<Entry>()
-                             .Select(entry => entry.Text)
-                             .Where(text => !string.IsNullOrWhiteSpace(text)) // Ignore empty fields
+                             .OfType<StackLayout>()
+                             .Select(layout =>
+                             {
+                                 var numberEntry = layout.Children[0] as Entry;
+                                 var nameEntry = layout.Children[1] as Entry;
+
+                                 int.TryParse(numberEntry?.Text, out int number);
+                                 var name = nameEntry?.Text;
+
+                                 return (number, name);
+                             })
+                             .Where(details => details.Item2 != null && !string.IsNullOrWhiteSpace(details.Item2))
                              .ToList();
+    }
+
+    private async void OnFertigButtonClicked(object sender, EventArgs e)
+    {
+        var playerDetails = GetPlayerDetails();
+
+        foreach (var (playerNumber, playerName) in playerDetails)
+        {
+            var player = new Player
+            {
+                Id = Guid.NewGuid(),
+                PlayerNumber = playerNumber,
+                Name = playerName,
+                Team = match.HomeTeam
+            };
+
+            Database.Players.Add(player);
+        }
+        
+        await Navigation.PushAsync(new CaptureMatch(match));
     }
 }
