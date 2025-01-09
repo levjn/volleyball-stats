@@ -112,6 +112,6 @@ public partial class CreatePlayersPage : ContentPage
             Database.Players.Add(player);
         }
         
-        await Navigation.PushAsync(new CaptureMatch(match));
+        await Navigation.PushAsync(new CaptureMatch(match.Id));
     }
 }

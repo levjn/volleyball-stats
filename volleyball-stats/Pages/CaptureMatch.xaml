@@ -8,8 +8,9 @@
         <VerticalStackLayout>
             <HorizontalStackLayout>
                 <Label x:Name="LeftTeam"/>
-                <Label 
-                    Text=" vs "/>
+                <Label x:Name="LeftSetScore"/>
+                <Label Text=":"/>
+                <Label x:Name="RightSetScore"/>
                 <Label x:Name="RightTeam" />
             </HorizontalStackLayout>
             <HorizontalStackLayout>
@@ -17,7 +18,8 @@
                         Text="-" 
                         TextColor="White" 
                         WidthRequest="10" 
-                        HeightRequest="10"/>
+                        HeightRequest="10"
+                        Clicked="decrementLeftScore"/>
 
                 <!-- Space between buttons -->
                 <BoxView HeightRequest="20" />
@@ -27,7 +29,8 @@
                         Text="+" 
                         TextColor="White" 
                         WidthRequest="10" 
-                        HeightRequest="10"/>
+                        HeightRequest="10"
+                        Clicked="incrementLeftScore"/>
                 <Label 
                     Text="0"
                     x:Name="LeftScore"/>
@@ -41,7 +44,8 @@
                         Text="+" 
                         TextColor="White" 
                         WidthRequest="10" 
-                        HeightRequest="10"/>
+                        HeightRequest="10"
+                        Clicked="incrementRightScore"/>
                 
                 <!-- Space between buttons -->
                 <BoxView HeightRequest="20" />
@@ -50,7 +54,8 @@
                         Text="-" 
                         TextColor="White" 
                         WidthRequest="10" 
-                        HeightRequest="10"/>
+                        HeightRequest="10"
+                        Clicked="decrementRightScore"/>
             </HorizontalStackLayout>
         </VerticalStackLayout> 
     </ContentPage.Content>
