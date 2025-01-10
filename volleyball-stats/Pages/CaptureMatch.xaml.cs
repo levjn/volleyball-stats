@@ -41,21 +41,26 @@ public partial class CaptureMatch : ContentPage
             {
                 guestWonSets++;
             }
-
-            currentGuestScore = 0;
-            currentHomeScore = 0;
+            
             match.HomeScores.Add(currentHomeScore);
             match.GuestScores.Add(currentGuestScore);
+            currentGuestScore = 0;
+            currentHomeScore = 0;
             isHomeOnLeft = !isHomeOnLeft;
             UpdateScoreDisplay();
 
             setsPlayed++;
+            checkForGameWinner();
         }
     }
 
-    private void checkForGameWinner()
+    private async void checkForGameWinner()
     {
-        
+        if (guestWonSets == 3 | homeWonSets == 3)
+        {
+            await Navigation.PushAsync(new SummaryPage(match.Id));
+
+        }
     }
 
     private void UpdateScoreDisplay()

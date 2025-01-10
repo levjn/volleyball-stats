@@ -32,7 +32,7 @@ public partial class CreateMatchPage : ContentPage
 		
 		Database.Matches.Add(match);
 		
-		await Navigation.PushAsync(new CreatePlayersPage(match.Id));
+		await Navigation.PushAsync(new CaptureMatch(match.Id));
 	}
 	
 	

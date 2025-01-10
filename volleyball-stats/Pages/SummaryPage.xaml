@@ -1,10 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="volleyball_stats.Pages.SummaryPage"
              Title="Zusammenfassung">
     <ContentPage.Content>
-        
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Label x:Name="homeName"/>
+                <Label Text="vs"/>
+                <Label x:Name="guestName"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Endresult"/>
+            <HorizontalStackLayout>
+                <Label x:Name="homeSetScore"/>
+                <Label Text=":"/>
+                <Label x:Name="guestSetScore"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Sets"/>
+            <HorizontalStackLayout>
+                <VerticalStackLayout>
+                    <CollectionView x:Name="homeScoresList">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding .}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <CollectionView x:Name="guestScoresList">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding .}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

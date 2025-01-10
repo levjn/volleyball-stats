@@ -8,8 +8,6 @@ public class Database
     public static  List<Match> Matches { get; set; } = new();
     public static List<Team> Teams { get; set; } = new();
     public static List<Player> Players { get; set; } = new();
-    public static List<Player_Match_Stats> PlayerMatchStats { get; set; } = new();
-
 
 
 
