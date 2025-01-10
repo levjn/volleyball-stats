@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="volleyball_stats.Pages.ContactPage">
+    <ContentPage.Content >
+
+        <StackLayout Padding="20">
+
+            <!-- Vorname Eingabe -->
+            <Entry x:Name="FirstNameEntry" Placeholder="Vorname" />
+            <Label x:Name="FirstNameErrorLabel" TextColor="Red" IsVisible="False" />
+
+            <!-- Nachname Eingabe -->
+            <Entry x:Name="LastNameEntry" Placeholder="Nachname" />
+            <Label x:Name="LastNameErrorLabel" TextColor="Red" IsVisible="False" />
+
+            <!-- Geburtsdatum -->
+            <DatePicker x:Name="BirthDatePicker" />
+            <Label x:Name="BirthDateErrorLabel" TextColor="Red" IsVisible="False" />
+
+            <!-- Mann oder Frau Checkbox -->
+            <CheckBox x:Name="GenderCheckBox" />
+            <Label Text="Mann oder Frau" />
+
+            <!-- E-Mail Eingabe -->
+            <Entry x:Name="EmailEntry" Placeholder="E-Mail" Keyboard="Email" />
+            <Label x:Name="EmailErrorLabel" TextColor="Red" IsVisible="False" />
+
+            <!-- Submit Button -->
+            <Button Text="Absenden" Clicked="navigateToMainPage" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

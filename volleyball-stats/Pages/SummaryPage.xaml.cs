@@ -41,5 +41,6 @@ public partial class SummaryPage : ContentPage
 
         homeScoresList.ItemsSource = match.HomeScores;
         guestScoresList.ItemsSource = match.GuestScores;
+        ScoresList.ItemsSource = match.GuestScores;
     }
 }

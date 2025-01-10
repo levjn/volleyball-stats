@@ -29,6 +29,16 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </VerticalStackLayout>
+                
+                <VerticalStackLayout>
+                    <CollectionView x:Name="ScoresList">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text=":"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
 
                 <VerticalStackLayout>
                     <CollectionView x:Name="guestScoresList">

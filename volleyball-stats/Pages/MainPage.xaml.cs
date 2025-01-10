@@ -12,8 +12,18 @@
         public async void navigateToCreateMatch(object? sender, EventArgs eventArgs)
         {
             await Navigation.PushAsync(new CreateMatchPage());
-
         }
-    }
 
+        public async void navigateToInstructionsPage(object? sender, EventArgs eventArgs)
+        {
+            await Navigation.PushAsync(new InstructionsPage());
+        }
+
+        public async void navigateToContactPage(object? sender, EventArgs eventArgs)
+        {
+            await Navigation.PushAsync(new ContactPage());
+        }
+        
+        
+    }
 }

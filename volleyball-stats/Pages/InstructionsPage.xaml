@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="volleyball_stats.Pages.InstructionsPage">
+    <ContentPage.Content>
+        <Label Text="The application is designed to assist users in recording detailed match statistics in real-time. It allows users to input the players participating in the match before the game begins. During the match, the app provides a simple interface for counting and tracking points as the game progresses. This feature ensures accurate data collection without disrupting the flow of the game. Once the match concludes, the app automatically redirects users to a summary page, where they can review a comprehensive overview of the match's performance. This includes the final scores, individual player statistics, and other relevant metrics. The summary page not only provides a clear breakdown of the match but also allows users to analyze the results, making it easier to spot trends and areas for improvement. Whether for casual play, training, or more competitive scenarios, the app offers a seamless way to keep track of match details, ensuring that players, coaches, and teams can make informed decisions based on reliable data."/>
+    </ContentPage.Content>
+</ContentPage>

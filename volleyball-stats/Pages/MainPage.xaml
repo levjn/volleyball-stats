@@ -4,18 +4,19 @@
              x:Class="volleyball_stats.Pages.MainPage"
              Title="Volleyball Stats">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Label
-                Text='Klicke auf "Neuer Match" um zu beginnen.' />
+    <Grid RowDefinitions="*,Auto">
+        <!-- Content Section -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="30,0" Spacing="25">
+                <Label Text='Klicke auf "Neuer Match" um zu beginnen.' />
+                <Button x:Name="CreateMatchBtn" Text="Neuer Match" Clicked="navigateToCreateMatch" />
+            </VerticalStackLayout>
+        </ScrollView>
 
-            <Button
-                x:Name="CreateMatchBtn"
-                Text="Neuer Match" 
-                Clicked="navigateToCreateMatch" />
-        </VerticalStackLayout>
-    </ScrollView>
-
+        <!-- Footer Section -->
+        <StackLayout VerticalOptions="End" Padding="10" Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Contact" Clicked="navigateToContactPage" Margin="5"/>
+            <Button Text="Instructions" Clicked="navigateToInstructionsPage" Margin="5"/>
+        </StackLayout>
+    </Grid>
 </ContentPage>
