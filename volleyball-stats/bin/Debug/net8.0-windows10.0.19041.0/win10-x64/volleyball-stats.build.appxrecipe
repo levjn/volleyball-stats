@@ -214,6 +214,9 @@
     <AppxPackagedFile Include="C:\Users\Admin\source\repos\volleyball-stats\volleyball-stats\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Admin\source\repos\volleyball-stats\volleyball-stats\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo.scale-100.png">
+      <PackagePath>logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Admin\source\repos\volleyball-stats\volleyball-stats\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\volleyball-stats.deps.json">
       <PackagePath>volleyball-stats.deps.json</PackagePath>
     </AppxPackagedFile>
@@ -453,6 +456,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Admin\.nuget\packages\microsoft.maui.core\8.0.82\lib\net8.0-windows10.0.19041\Microsoft.Maui.pri">
       <PackagePath>Microsoft.Maui.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Admin\source\repos\volleyball-stats\volleyball-stats\Assets\logo.png">
+      <PackagePath>Assets\logo.png</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

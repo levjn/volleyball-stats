@@ -1,4 +1,5 @@
 ﻿using volleyball_stats.Entities;
+using System.Linq;
 
 namespace volleyball_stats.Pages;
 
@@ -6,10 +7,12 @@ public partial class CreatePlayersPage : ContentPage
 {
     private const int MaxFields = 14;  // Maximum number of fields
     private const int InitialFields = 6;  // Initial number of fields
+    private int playerCount = 1; // Zähler für die Spielernummer
     private Match match;
 
     public CreatePlayersPage(Guid matchId)
     {
+        NavigationPage.SetHasNavigationBar(this, false);
         NavigationPage.SetHasBackButton(this, false);
         InitializeComponent();
         match = Database.Matches.FirstOrDefault(m => m.Id == matchId);
@@ -21,17 +24,20 @@ public partial class CreatePlayersPage : ContentPage
 
         setHomeName();
 
+        // Initiale Felder hinzufügen
         for (int i = 0; i < InitialFields; i++)
         {
             AddEntryField(null, null);
         }
     }
 
+    // Setzt den Heimteamnamen
     public void setHomeName()
     {
         homeNameLabel.Text = $"Heimteam: {match.HomeTeam.Name}";
     }
 
+    // Hinzufügen eines neuen Feldes
     private void AddEntryField(object sender, EventArgs e)
     {
         if (entryContainer.Children.Count >= MaxFields)
@@ -46,16 +52,19 @@ public partial class CreatePlayersPage : ContentPage
             Spacing = 10
         };
 
+        // Spieler Nummer Eingabefeld (mit Breite)
         var numberEntry = new Entry
         {
             Placeholder = "Nummer",
             Keyboard = Keyboard.Numeric,
-            WidthRequest = 60
+            WidthRequest = 60, // Breiteres Eingabefeld
+            Text = playerCount.ToString() // Die Nummer des Spielers
         };
 
+        // Spieler Name Eingabefeld
         var nameEntry = new Entry
         {
-            Placeholder = $"Spieler {entryContainer.Children.Count / 2 + 1}",
+            Placeholder = $"Spieler {playerCount}",
             HorizontalOptions = LayoutOptions.FillAndExpand
         };
 
@@ -63,13 +72,20 @@ public partial class CreatePlayersPage : ContentPage
         playerEntryLayout.Children.Add(nameEntry);
 
         entryContainer.Children.Add(playerEntryLayout);
+
+        // Zähler erhöhen, damit die nächste Spieler Nummer korrekt ist
+        playerCount++;
     }
 
+    // Entfernen eines Feldes
     private void RemoveEntryField(object sender, EventArgs e)
     {
         if (entryContainer.Children.Count > 0)
         {
             entryContainer.Children.RemoveAt(entryContainer.Children.Count - 1);
+
+            // Zähler verringern, um die Nummer des nächsten Spielers korrekt zu setzen
+            playerCount--;
         }
         else
         {
@@ -77,6 +93,7 @@ public partial class CreatePlayersPage : ContentPage
         }
     }
 
+    // Hole die Details der Spieler
     public List<(int number, string? name)> GetPlayerDetails()
     {
         return entryContainer.Children
@@ -95,6 +112,7 @@ public partial class CreatePlayersPage : ContentPage
                              .ToList();
     }
 
+    // Klick auf "Fertig"-Button
     private async void OnFertigButtonClicked(object sender, EventArgs e)
     {
         var playerDetails = GetPlayerDetails();

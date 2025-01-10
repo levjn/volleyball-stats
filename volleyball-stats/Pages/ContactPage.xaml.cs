@@ -10,6 +10,7 @@ public partial class ContactPage : ContentPage
 {
     public ContactPage()
     {
+        NavigationPage.SetHasNavigationBar(this, false);
         InitializeComponent();
     }
     

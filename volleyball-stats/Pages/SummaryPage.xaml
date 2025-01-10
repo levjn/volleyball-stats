@@ -2,54 +2,67 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="volleyball_stats.Pages.SummaryPage"
-             Title="Zusammenfassung">
-    <ContentPage.Content>
-        <VerticalStackLayout>
-            <HorizontalStackLayout>
-                <Label x:Name="homeName"/>
-                <Label Text="vs"/>
-                <Label x:Name="guestName"/>
-            </HorizontalStackLayout>
+             Title="Zusammenfassung"
+             BackgroundColor="#232529">
 
-            <Label Text="Endresult"/>
-            <HorizontalStackLayout>
-                <Label x:Name="homeSetScore"/>
-                <Label Text=":"/>
-                <Label x:Name="guestSetScore"/>
-            </HorizontalStackLayout>
+    <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="CenterAndExpand">
+        <!-- Header with title and logo -->
+        <HorizontalStackLayout VerticalOptions="Start" Spacing="10" HorizontalOptions="CenterAndExpand">
+            <Label Text="Summary" FontSize="24" TextColor="#FFFFFF" HorizontalOptions="CenterAndExpand"/>
+            <Image Source="Assets/logo.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"/>
+        </HorizontalStackLayout>
 
-            <Label Text="Sets"/>
-            <HorizontalStackLayout>
-                <VerticalStackLayout>
-                    <CollectionView x:Name="homeScoresList">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Label Text="{Binding .}"/>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </VerticalStackLayout>
-                
-                <VerticalStackLayout>
-                    <CollectionView x:Name="ScoresList">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Label Text=":"/>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </VerticalStackLayout>
+        <!-- Home and Guest team names -->
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+            <Label x:Name="homeName" TextColor="#FFFFFF" FontSize="18" HorizontalOptions="Center"/>
+            <Label Text="vs" TextColor="#FFFFFF" FontSize="18" HorizontalOptions="Center"/>
+            <Label x:Name="guestName" TextColor="#FFFFFF" FontSize="18" HorizontalOptions="Center"/>
+        </HorizontalStackLayout>
 
-                <VerticalStackLayout>
-                    <CollectionView x:Name="guestScoresList">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Label Text="{Binding .}"/>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </VerticalStackLayout>
-            </HorizontalStackLayout>
-        </VerticalStackLayout>
-    </ContentPage.Content>
+        <!-- Final result score -->
+        <Label Text="Endresult" TextColor="#FFFFFF" FontSize="18" HorizontalOptions="Center"/>
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="5">
+            <Label x:Name="homeSetScore" TextColor="#FFFFFF" FontSize="20" HorizontalOptions="Center"/>
+            <Label Text=":" TextColor="#FFFFFF" FontSize="20" HorizontalOptions="Center"/>
+            <Label x:Name="guestSetScore" TextColor="#FFFFFF" FontSize="20" HorizontalOptions="Center"/>
+        </HorizontalStackLayout>
+        
+        <Label Text="Sets" TextColor="#FFFFFF" FontSize="18" HorizontalOptions="Center"/>
+
+        <!-- Horizontal StackLayout for Sets -->
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+            <!-- Home team scores -->
+            <VerticalStackLayout Spacing="5" HorizontalOptions="CenterAndExpand">
+                <CollectionView x:Name="homeScoresList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding .}" TextColor="#FFFFFF" FontSize="16" HorizontalOptions="Center"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <!-- Separator for sets -->
+            <VerticalStackLayout Spacing="5" HorizontalOptions="CenterAndExpand">
+                <CollectionView x:Name="ScoresList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text=":" TextColor="#FFFFFF" FontSize="16" HorizontalOptions="Center"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <!-- Guest team scores -->
+            <VerticalStackLayout Spacing="5">
+                <CollectionView x:Name="guestScoresList"  HorizontalOptions="CenterAndExpand">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding .}" TextColor="#FFFFFF" FontSize="16" HorizontalOptions="Center"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
 </ContentPage>

@@ -15,6 +15,7 @@ public partial class CaptureMatch : ContentPage
 
     public CaptureMatch(Guid matchId)
     {
+        NavigationPage.SetHasNavigationBar(this, false);
         NavigationPage.SetHasBackButton(this, false);
         match = Database.Matches.FirstOrDefault(m => m.Id == matchId);
 
@@ -66,26 +67,36 @@ public partial class CaptureMatch : ContentPage
     private void UpdateScoreDisplay()
     {
         checkForSetWinner();
+
+        // Wenn das Heimteam links ist
         if (isHomeOnLeft)
         {
             LeftTeam.Text = match.HomeTeam.Name;
             LeftScore.Text = currentHomeScore.ToString();
             LeftSetScore.Text = homeWonSets.ToString();
-            
+
             RightTeam.Text = match.GuestTeam.Name;
             RightScore.Text = currentGuestScore.ToString();
             RightSetScore.Text = guestWonSets.ToString();
         }
         else
         {
+            // Wenn das Gastteam links ist
             LeftTeam.Text = match.GuestTeam.Name;
             LeftSetScore.Text = guestWonSets.ToString();
             LeftScore.Text = currentGuestScore.ToString();
-            
+
             RightTeam.Text = match.HomeTeam.Name;
             RightScore.Text = currentHomeScore.ToString();
             RightSetScore.Text = homeWonSets.ToString();
         }
+    }
+
+    
+    public void OnSideSwitchToggled(object sender, ToggledEventArgs e)
+    {
+        isHomeOnLeft = !e.Value; // Wenn der Switch eingeschaltet ist, wechselt die Seite
+        UpdateScoreDisplay();
     }
 
     public void incrementLeftScore(object sender, EventArgs e)

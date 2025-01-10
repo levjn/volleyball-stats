@@ -10,6 +10,7 @@ public partial class InstructionsPage : ContentPage
 {
     public InstructionsPage()
     {
+        NavigationPage.SetHasNavigationBar(this, false);
         InitializeComponent();
     }
 }

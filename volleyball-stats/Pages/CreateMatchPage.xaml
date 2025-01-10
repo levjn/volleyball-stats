@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="volleyball_stats.Pages.CreateMatchPage"
-             Title="Neuen Match erstellen">
-    <VerticalStackLayout>
-        <Label 
-            Text="Heim Team" />
-        
-        <Entry Placeholder="Name"
-               x:Name="homeEntry" />
-        
-        <Label 
-            Text="Gast Team" />
-        
-        <Entry Placeholder="Name"
-               x:Name="guestEntry" />
-        
-        <Button
-            x:Name="finishedButton"
-            Text="Weiter" 
-            Clicked="navigateToCreatePlayers" />
+             Title="Create New Match"
+             BackgroundColor="#232529">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <!-- Header -->
+        <HorizontalStackLayout VerticalOptions="Start" Spacing="10" HorizontalOptions="CenterAndExpand" >
+            <Label Text="Create Teams" FontSize="24" TextColor="#FFFFFF" HorizontalOptions="CenterAndExpand"/>
+            <Image Source="Assets/logo.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"/>
+        </HorizontalStackLayout>
+
+        <Label Text="Home Team" TextColor="#FFFFFF"/>
+        <Entry Placeholder="Team Name" x:Name="homeEntry" BackgroundColor="#FFFFFF" TextColor="#232529" HeightRequest="50"/>
+
+        <Label Text="Guest Team" TextColor="#FFFFFF"/>
+        <Entry Placeholder="Team Name" x:Name="guestEntry" BackgroundColor="#FFFFFF" TextColor="#232529" HeightRequest="50"/>
+
+        <!-- Next Button -->
+        <Button x:Name="finishedButton" Text="Next" BackgroundColor="#524EB7" TextColor="#FFFFFF" HeightRequest="50" Clicked="navigateToCreatePlayers"/>
     </VerticalStackLayout>
 </ContentPage>

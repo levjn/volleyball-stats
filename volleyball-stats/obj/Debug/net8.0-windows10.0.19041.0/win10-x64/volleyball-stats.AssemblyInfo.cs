@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("volleyball-stats")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+78a1158da1daee860a936e38cc61e6975a827941")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e274cb4ce140310ffc38576d760e7d82a81fb558")]
 [assembly: System.Reflection.AssemblyProductAttribute("volleyball-stats")]
 [assembly: System.Reflection.AssemblyTitleAttribute("volleyball-stats")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

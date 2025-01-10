@@ -2,61 +2,71 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="volleyball_stats.Pages.CaptureMatch"
-             Title="Match">
+             x:Class="volleyball_stats.Pages.CaptureMatch">
     <ContentPage.Content>
-        <VerticalStackLayout>
-            <HorizontalStackLayout>
-                <Label x:Name="LeftTeam"/>
-                <Label x:Name="LeftSetScore"/>
-                <Label Text=":"/>
-                <Label x:Name="RightSetScore"/>
-                <Label x:Name="RightTeam" />
+        <VerticalStackLayout Padding="20" Spacing="20" >
+            <HorizontalStackLayout VerticalOptions="Start" Spacing="10" HorizontalOptions="CenterAndExpand" >
+                <Label Text="Volleyball-Stats" FontSize="24" HorizontalOptions="CenterAndExpand" />
+                <Image Source="Assets/logo.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="CenterAndExpand" />
             </HorizontalStackLayout>
-            <HorizontalStackLayout>
+            
+            <!-- Team and Score Labels -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+                <Label x:Name="LeftTeam" FontSize="18" HorizontalOptions="Center" />
+                <Label x:Name="LeftSetScore" FontSize="18" HorizontalOptions="Center" />
+                <Label Text=":" FontSize="18" HorizontalOptions="Center" />
+                <Label x:Name="RightSetScore" FontSize="18" HorizontalOptions="Center" />
+                <Label x:Name="RightTeam" FontSize="18" HorizontalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <!-- Score Buttons -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                <!-- Left Team Buttons -->
                 <Button BackgroundColor="Red" 
                         Text="-" 
                         TextColor="White" 
-                        WidthRequest="10" 
-                        HeightRequest="10"
+                        WidthRequest="40" 
+                        HeightRequest="40"
                         Clicked="decrementLeftScore"/>
 
-                <!-- Space between buttons -->
-                <BoxView HeightRequest="20" />
+                <BoxView WidthRequest="20" />
 
-                <!-- Green Button with Plus -->
                 <Button BackgroundColor="Green" 
                         Text="+" 
                         TextColor="White" 
-                        WidthRequest="10" 
-                        HeightRequest="10"
+                        WidthRequest="40" 
+                        HeightRequest="40"
                         Clicked="incrementLeftScore"/>
-                <Label 
-                    Text="0"
-                    x:Name="LeftScore"/>
-                <Label 
-                    Text=":"/>
-                <Label 
-                    Text="0"
-                    x:Name="RightScore"/>
-                <!-- Green Button with Plus -->
+
+                <Label Text="0" FontSize="18" x:Name="LeftScore" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                <Label Text=":" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                <Label Text="0" FontSize="18" x:Name="RightScore" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                <!-- Right Team Buttons -->
                 <Button BackgroundColor="Green" 
                         Text="+" 
                         TextColor="White" 
-                        WidthRequest="10" 
-                        HeightRequest="10"
+                        WidthRequest="40" 
+                        HeightRequest="40"
                         Clicked="incrementRightScore"/>
-                
-                <!-- Space between buttons -->
-                <BoxView HeightRequest="20" />
-                
+
+                <BoxView WidthRequest="20" />
+
                 <Button BackgroundColor="Red" 
                         Text="-" 
                         TextColor="White" 
-                        WidthRequest="10" 
-                        HeightRequest="10"
+                        WidthRequest="40" 
+                        HeightRequest="40"
                         Clicked="decrementRightScore"/>
             </HorizontalStackLayout>
-        </VerticalStackLayout> 
+
+            <!-- Switch to toggle between sides -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10" Margin="10">
+                <Label Text="Seiten wechseln:" VerticalOptions="Center" FontSize="16"/>
+                <Switch x:Name="SideSwitch" Toggled="OnSideSwitchToggled" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

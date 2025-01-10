@@ -1,35 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="volleyball_stats.Pages.ContactPage">
-    <ContentPage.Content >
+             x:Class="volleyball_stats.Pages.ContactPage"
+             BackgroundColor="#232529">
 
-        <StackLayout Padding="20">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
+                <!-- Header -->
+                <HorizontalStackLayout VerticalOptions="Start" Spacing="10" HorizontalOptions="CenterAndExpand" >
+                    <Label Text="Contact" FontSize="24" TextColor="#FFFFFF" HorizontalOptions="CenterAndExpand"/>
+                    <Image Source="Assets/logo.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"/>
+                </HorizontalStackLayout>
 
-            <!-- Vorname Eingabe -->
-            <Entry x:Name="FirstNameEntry" Placeholder="Vorname" />
-            <Label x:Name="FirstNameErrorLabel" TextColor="Red" IsVisible="False" />
+                <!-- Form Fields -->
+                <Entry x:Name="FirstNameEntry" Placeholder="First Name" BackgroundColor="#FFFFFF" TextColor="#232529" HeightRequest="50"/>
+                <Label x:Name="FirstNameErrorLabel" TextColor="Red" IsVisible="False"/>
 
-            <!-- Nachname Eingabe -->
-            <Entry x:Name="LastNameEntry" Placeholder="Nachname" />
-            <Label x:Name="LastNameErrorLabel" TextColor="Red" IsVisible="False" />
+                <Entry x:Name="LastNameEntry" Placeholder="Last Name" BackgroundColor="#FFFFFF" TextColor="#232529" HeightRequest="50"/>
+                <Label x:Name="LastNameErrorLabel" TextColor="Red" IsVisible="False"/>
 
-            <!-- Geburtsdatum -->
-            <DatePicker x:Name="BirthDatePicker" />
-            <Label x:Name="BirthDateErrorLabel" TextColor="Red" IsVisible="False" />
+                <DatePicker x:Name="BirthDatePicker" HeightRequest="50"/>
+                <Label x:Name="BirthDateErrorLabel" TextColor="Red" IsVisible="False"/>
 
-            <!-- Mann oder Frau Checkbox -->
-            <CheckBox x:Name="GenderCheckBox" />
-            <Label Text="Mann oder Frau" />
+                <Label Text="Gender" TextColor="#FFFFFF"/>
+                <Picker x:Name="GenderPicker" BackgroundColor="#FFFFFF" TextColor="#232529">
+                    <Picker.Items>
+                        <x:String>Mr.</x:String>
+                        <x:String>Ms.</x:String>
+                    </Picker.Items>
+                </Picker>
 
-            <!-- E-Mail Eingabe -->
-            <Entry x:Name="EmailEntry" Placeholder="E-Mail" Keyboard="Email" />
-            <Label x:Name="EmailErrorLabel" TextColor="Red" IsVisible="False" />
+                <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" BackgroundColor="#FFFFFF" TextColor="#232529" HeightRequest="50"/>
+                <Label x:Name="EmailErrorLabel" TextColor="Red" IsVisible="False"/>
 
-            <!-- Submit Button -->
-            <Button Text="Absenden" Clicked="navigateToMainPage" />
-
-        </StackLayout>
+                <!-- Submit Button -->
+                <Button Text="Submit" BackgroundColor="#524EB7" TextColor="#FFFFFF" HeightRequest="50" Clicked="navigateToMainPage"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

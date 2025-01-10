@@ -1078,3 +1078,4 @@ C:\Users\Admin\source\repos\volleyball-stats\volleyball-stats\obj\Debug\net8.0-a
 C:\Users\Admin\source\repos\volleyball-stats\volleyball-stats\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\Admin\source\repos\volleyball-stats\volleyball-stats\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Admin\source\repos\volleyball-stats\volleyball-stats\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Admin\source\repos\volleyball-stats\volleyball-stats\obj\Debug\net8.0-android\resizetizer\r\drawable\logo.png

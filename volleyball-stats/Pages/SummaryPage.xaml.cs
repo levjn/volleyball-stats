@@ -9,6 +9,7 @@ public partial class SummaryPage : ContentPage
     public SummaryPage(Guid matchId)
     {
         InitializeComponent();
+        NavigationPage.SetHasNavigationBar(this, false);
         NavigationPage.SetHasBackButton(this, false);
 
         match = Database.Matches.FirstOrDefault(m => m.Id == matchId);

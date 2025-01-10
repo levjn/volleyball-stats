@@ -1,22 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="volleyball_stats.Pages.MainPage"
-             Title="Volleyball Stats">
+             BackgroundColor="#232529">
 
-    <Grid RowDefinitions="*,Auto">
-        <!-- Content Section -->
-        <ScrollView Grid.Row="0">
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <!-- Header with title and logo -->
+        <HorizontalStackLayout VerticalOptions="Start" Spacing="10" HorizontalOptions="CenterAndExpand" >
+            <Label Text="Volleyball-Stats" FontSize="24" TextColor="#FFFFFF" HorizontalOptions="CenterAndExpand"/>
+            <Image Source="Assets/logo.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"/>
+        </HorizontalStackLayout>
+
+        <!-- Button and text content -->
+        <ScrollView VerticalOptions="FillAndExpand">
             <VerticalStackLayout Padding="30,0" Spacing="25">
-                <Label Text='Klicke auf "Neuer Match" um zu beginnen.' />
-                <Button x:Name="CreateMatchBtn" Text="Neuer Match" Clicked="navigateToCreateMatch" />
+                <Label Text='Click on "New Match" to begin.' TextColor="#FFFFFF" FontSize="18"/>
+                <Button x:Name="CreateMatchBtn" Text="New Match" BackgroundColor="#524EB7" TextColor="#FFFFFF" HeightRequest="50" Clicked="navigateToCreateMatch"/>
             </VerticalStackLayout>
         </ScrollView>
 
         <!-- Footer Section -->
         <StackLayout VerticalOptions="End" Padding="10" Orientation="Horizontal" HorizontalOptions="Center">
-            <Button Text="Contact" Clicked="navigateToContactPage" Margin="5"/>
-            <Button Text="Instructions" Clicked="navigateToInstructionsPage" Margin="5"/>
+            <Button Text="Contact" BackgroundColor="#524EB7" TextColor="#FFFFFF" HeightRequest="40" WidthRequest="120" Margin="5" Clicked="navigateToContactPage"/>
+            <Button Text="Instructions" BackgroundColor="#524EB7" TextColor="#FFFFFF" HeightRequest="40" WidthRequest="120" Margin="5" Clicked="navigateToInstructionsPage"/>
         </StackLayout>
-    </Grid>
+    </VerticalStackLayout>
 </ContentPage>

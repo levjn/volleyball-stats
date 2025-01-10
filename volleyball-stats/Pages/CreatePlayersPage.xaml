@@ -1,27 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="volleyball_stats.Pages.CreatePlayersPage"
-             Title="Spieler erstellen">
-    <ContentPage.Content>
-        <!-- Scrollable Content -->
-        <ScrollView>
-            <VerticalStackLayout Padding="20" Spacing="10">
-                <!-- Label to display the Home Team Name -->
-                <Label x:Name="homeNameLabel" Text="Heimteam: " FontSize="Medium" />
-
-                <!-- Dynamic Entry Fields -->
-                <StackLayout x:Name="entryContainer" />
-
-                <!-- Buttons to Add and Remove Entry Fields -->
-                <HorizontalStackLayout Spacing="10">
-                    <Button x:Name="addFieldButton" Text="Feld hinzufügen" Clicked="AddEntryField" />
-                    <Button x:Name="removeFieldButton" Text="Feld entfernen" Clicked="RemoveEntryField" />
-                </HorizontalStackLayout>
-
-                <!-- Finalize Button -->
-                <Button x:Name="finishButton" Text="Fertig" HorizontalOptions="End" VerticalOptions="End" Clicked="OnFertigButtonClicked" />
-            </VerticalStackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+             BackgroundColor="#232529">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <HorizontalStackLayout VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+                <Label Text="Create Players" FontSize="24" HorizontalOptions="Center" TextColor="#FFFFFF"/>
+                <Image Source="Assets/logo.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" />
+            </HorizontalStackLayout>
+            <Label x:Name="homeNameLabel" Text="Heimteam: " FontSize="Medium" TextColor="#FFFFFF"/>
+            <StackLayout x:Name="entryContainer"/>
+            <HorizontalStackLayout Spacing="10">
+                <Button x:Name="addFieldButton" Text="Feld hinzufügen" BackgroundColor="#524EB7" TextColor="#FFFFFF" Clicked="AddEntryField"/>
+                <Button x:Name="removeFieldButton" Text="Feld entfernen" BackgroundColor="#524EB7" TextColor="#FFFFFF" Clicked="RemoveEntryField"/>
+                <Button x:Name="finishButton" Text="Fertig" BackgroundColor="#524EB7" TextColor="#FFFFFF" HorizontalOptions="End" VerticalOptions="End" Clicked="OnFertigButtonClicked"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -7,6 +7,7 @@ public partial class CreateMatchPage : ContentPage
 {
 	public CreateMatchPage()
 	{
+		NavigationPage.SetHasNavigationBar(this, false);
 		NavigationPage.SetHasBackButton(this, false);
 		InitializeComponent();
 		

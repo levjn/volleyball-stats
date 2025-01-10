@@ -1,9 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="volleyball_stats.Pages.InstructionsPage">
+             x:Class="volleyball_stats.Pages.InstructionsPage"
+             BackgroundColor="#232529">
+
     <ContentPage.Content>
-        <Label Text="The application is designed to assist users in recording detailed match statistics in real-time. It allows users to input the players participating in the match before the game begins. During the match, the app provides a simple interface for counting and tracking points as the game progresses. This feature ensures accurate data collection without disrupting the flow of the game. Once the match concludes, the app automatically redirects users to a summary page, where they can review a comprehensive overview of the match's performance. This includes the final scores, individual player statistics, and other relevant metrics. The summary page not only provides a clear breakdown of the match but also allows users to analyze the results, making it easier to spot trends and areas for improvement. Whether for casual play, training, or more competitive scenarios, the app offers a seamless way to keep track of match details, ensuring that players, coaches, and teams can make informed decisions based on reliable data."/>
+        <VerticalStackLayout>
+            <!-- Header with title and logo -->
+            <HorizontalStackLayout VerticalOptions="Start" Spacing="10" HorizontalOptions="CenterAndExpand" >
+                <Label Text="Instructions" FontSize="24" HorizontalOptions="CenterAndExpand" TextColor="#FFFFFF"/>
+                <Image Source="Assets/logo.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <!-- Instructions Content -->
+            <VerticalStackLayout Padding="20" HorizontalOptions="CenterAndExpand" >
+                <Label Text="The application is designed to assist users in recording..." TextColor="#FFFFFF"/>
+                <Label Text="How can I start a match?" TextColor="#FFFFFF"/>
+                <Label Text="You can start a new match by clicking on 'New Match'..." TextColor="#FFFFFF"/>
+                <Label Text="How can I capture the statistics of a player?" TextColor="#FFFFFF"/>
+                <Label Text="Currently, capturing statistics of players is not available..." TextColor="#FFFFFF"/>
+                <Label Text="Where can I see the summary of my match?" TextColor="#FFFFFF"/>
+                <Label Text="You can see the match summary after the match is finished..." TextColor="#FFFFFF"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
